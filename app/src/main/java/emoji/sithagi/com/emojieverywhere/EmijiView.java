@@ -105,30 +105,25 @@ public class EmijiView extends FragmentActivity implements View.OnTouchListener,
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        switch (v.getId()) {
-            case R.id.edit_chat_message:
-                if (isEmojiVisible) {
-                    emoticonsButton
-                            .setBackgroundResource(R.drawable.ic_vp_smileys);
-                    emojiIconsCover
-                            .setVisibility(LinearLayout.GONE);
-                    isEmojiVisible = false;
-                }
-                break;
-
-//            case R.id.list_chat:
-//                if (isEmojiVisible) {
-//                    emoticonsButton
-//                            .setBackgroundResource(R.drawable.ic_vp_smileys);
-//                    emojiIconsCover
-//                            .setVisibility(LinearLayout.GONE);
-//                    isEmojiVisible = false;
-//                }
-//                break;
-
-            default:
-                break;
+        final int id = v.getId();
+        if (id == R.id.edit_chat_message) {
+            if (isEmojiVisible) {
+                emoticonsButton
+                        .setBackgroundResource(R.drawable.ic_vp_smileys);
+                emojiIconsCover
+                        .setVisibility(LinearLayout.GONE);
+                isEmojiVisible = false;
+            }
         }
+//        else if(id == R.id.list_chat) {
+//            if (isEmojiVisible) {
+//                emoticonsButton
+//                        .setBackgroundResource(R.drawable.ic_vp_smileys);
+//                emojiIconsCover
+//                        .setVisibility(LinearLayout.GONE);
+//                isEmojiVisible = false;
+//            }
+//        }
         return false;
     }
 
